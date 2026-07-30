@@ -1,0 +1,11 @@
+image:
+  repository: devops-lab-app     # switches to a GHCR path in Phase 5
+  tag: "0.1.0"
+  pullPolicy: IfNotPresent
+replicaCount: 2
+service:
+  port: 80
+  targetPort: 8080
+# monitoring toggle — flipped on in Phase 6
+serviceMonitor:
+  enabled: false
