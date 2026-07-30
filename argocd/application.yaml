@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<OWNER>/devops-lab.git
+    repoURL: https://github.com/ronmark1/devops-lab.git
     targetRevision: main
     path: devops-lab-chart
   destination:
