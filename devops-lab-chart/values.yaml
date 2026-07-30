@@ -8,4 +8,4 @@ service:
   targetPort: 8080
 # monitoring toggle — flipped on in Phase 6
 serviceMonitor:
-  enabled: false
+  enabled: true
