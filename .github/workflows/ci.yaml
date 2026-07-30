@@ -22,6 +22,8 @@ jobs:
           python-version: "3.12"
 
       - name: Install & test
+        env:
+          PYTHONPATH: .
         run: |
           pip install -r requirements.txt pytest
           pytest
