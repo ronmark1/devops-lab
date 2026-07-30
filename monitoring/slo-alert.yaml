@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: devops-lab-slo
+  namespace: monitoring
+  labels:
+    release: prometheus
+spec:
+  groups:
+    - name: devops-lab.slo
+      rules:
+        - alert: HighErrorRate
+          # SLO: fewer than 1% of requests may be 5xx
+          expr: |
+            sum(rate(flask_http_request_total{status=~"5.."}[5m]))
+              / sum(rate(flask_http_request_total[5m])) > 0.01
+          for: 5m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Error rate above the 1% SLO"
