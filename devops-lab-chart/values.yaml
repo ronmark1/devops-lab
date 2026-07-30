@@ -1,7 +1,7 @@
 image:
-  repository: devops-lab-app     # switches to a GHCR path in Phase 5
-  tag: "0.1.0"
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/ronmark1/devops-lab-app     # switches to a GHCR path in Phase 5
+  tag: "latest"
+  pullPolicy: Always
 replicaCount: 2
 service:
   port: 80
